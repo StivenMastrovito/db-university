@@ -45,7 +45,7 @@ on `teachers`.`id` = `course_teacher`.`teacher_id`
 order by `degrees`.`name`
 
 -- 6. Selezionare tutti i docenti che insegnano nel Dipartimento di Matematica (54)
-select `teachers`.*, `departments`.`name`
+select distinct `teachers`.*, `departments`.`name`
 from `departments`
 inner join `degrees`
 on `departments`.`id` = `degrees`.`department_id`
@@ -68,4 +68,4 @@ inner join `students`
 on `students`.`id` = `exam_student`.`student_id`
 inner join `courses`
 on `courses`.`id` = `exams`.`course_id`
-group by  `students`.`id`, `courses`.`name`
+group by  `students`.`id`, `courses`.`id`
